@@ -1,0 +1,8 @@
+#! /usr/bin/env ruby
+
+$LOAD_PATH.unshift( File.dirname(__FILE__) + '/../lib' ) unless ENV['PATH'].split( File::PATH_SEPARATOR ).include?( File.dirname( $0 ) )
+
+require 'twitter2github'
+
+Twitter2github::App.new( ARGV ).run
+
