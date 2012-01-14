@@ -1,6 +1,31 @@
 = twitter2github
 
-Description goes here.
+Extract twitter follower and search same account in github
+
+== Requirements
+
+* Ruby ( tested with CRuby 1.8.7 and 1.9.2 )
+
+== Not required
+
+* Twitter authentication
+* github authentication
+
+== How to use
+
+ $ git clone git://github.com/wtnabe/twitter2github.git
+ $ cd twitter2github
+ $ bundle install
+ $ bundle exec ./bin/twitter2github -u TWITTER_USER > TWITTER_USER.csv
+
+If user's follower is over severeal hundred, it will take long long time.
+
+== Attention
+
+* Twitter API req is limited 150/hour
+* github API req is limited 5000/hour
+
+This tool tries to convert from twitter user id to screen_name by 100 users at once, and search github by 1 user at once. So if the number of user's followers is over 5000, script CANNOT complete its mission.
 
 == Contributing to twitter2github
  
